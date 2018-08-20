@@ -1,0 +1,37 @@
+duration: 0h
+price: ${price} USD/h
+
+# Optional - restricts buying resources only from specified address.
+#counterparty: 0x8125721c2413d99a33e351e1f6bb4e56b6b61567
+
+#blacklist: 0x8125721c2413d99a33e351e1f6bb4e56b6b61234
+
+# Identity level of the counterparty. Can be "anonymous", "registered", "identified" and "professional".
+identity: anonymous
+
+tag: ${tag}
+
+resources:
+  network:
+    # Indicates whether overlay networking is required.
+    overlay: true
+    # Indicates whether outbound connections are required (internet access).
+    outbound: true
+    # Indicates whether inbound connections are required and public IP should be present on worker.
+    incoming: true
+  benchmarks:
+    # Required RAM size in bytes.
+    ram-size: ${ramsize}
+    storage-size: ${storagesize}
+    # Required CPU cores. This only specifies mininum number of CPU threads, not their scheduling.
+    # To specify amount of computing power use cpu-sysbench-* parameters
+    cpu-cores: ${cpucores}
+    # Minimum computing power of single CPU thread, calculated via sysbench
+    # (some abstract value, currently  it is how many times CPU can calculate first 50000 prime numbers in 10 seconds).
+    cpu-sysbench-single: ${sysbenchsingle}
+    # The same as above, but for all threads, can be less than cpu-sysbench-single when you need less than 1 core.
+    cpu-sysbench-multi: ${sysbenchmulti}
+    # Download throughput in bits/s.
+    net-download: ${netdownload}
+    # Upload throughput in bits/s.
+    net-upload: ${netupload}
