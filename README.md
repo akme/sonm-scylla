@@ -110,6 +110,11 @@ cqlsh
 ```
 To get familiar with CQLSH you can read about [CQL](http://docs.scylladb.com/getting-started/cql/).
 
+### Get info about cluster members
+```
+cqlsh> SELECT peer, host_id, rpc_address FROM system.peers;
+```
+
 ### Create user
 Currently it's not able to create users and runs only in unauthenicated mode for tests only.
 
